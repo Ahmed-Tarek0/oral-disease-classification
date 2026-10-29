@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oral Disease Classifier</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Oral Disease Classifier</h1>
+      <p class="subtitle">Upload an intraoral photo to get a prediction across 6 conditions.</p>
+    </header>
+
+    <section id="dropzone" class="dropzone">
+      <input type="file" id="fileInput" accept="image/jpeg,image/png" hidden />
+      <div id="dropzoneContent">
+        <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M12 16V4m0 0L7 9m5-5l5 5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 16v3a2 2 0 002 2h12a2 2 0 002-2v-3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p><strong>Click to upload</strong> or drag and drop</p>
+        <p class="hint">JPEG or PNG, up to 5MB</p>
+      </div>
+      <img id="preview" class="preview" hidden />
+    </section>
+
+    <button id="predictBtn" disabled>Analyze Image</button>
+    <button id="clearBtn" class="secondary-btn" hidden>Try Another Image</button>
+
+    <section id="result" class="result" hidden>
+      <div class="result-header">
+        <span class="result-label">Predicted condition</span>
+        <h2 id="predictedClass"></h2>
+        <span id="confidence" class="confidence-badge"></span>
+      </div>
+
+      <div id="probabilities" class="probabilities"></div>
+    </section>
+
+    <section id="errorBox" class="error-box" hidden></section>
+
+    <div id="loader" class="loader" hidden>
+      <div class="spinner"></div>
+      <span>Analyzing...</span>
+    </div>
+  </main>
+
+  <script src="/static/scripts.js"></script>
+</body>
+</html>
