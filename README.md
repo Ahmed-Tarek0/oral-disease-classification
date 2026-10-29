@@ -126,11 +126,11 @@ images.
 
 ### Training Curves (Best Model)
 
-![ResNet50 fine-tuned training curves](assets/ResNet50(fine-tuned)_training_history_curves.png)
+![ResNet50 fine-tuned training curves](assets/resnet50_finetuned_training_curves.png)
 
 ### Confusion Matrix (Best Model)
 
-![ResNet50 fine-tuned confusion matrix](assets/ResNet50(fine-tuned)_CM.png)
+![ResNet50 fine-tuned confusion matrix](assets/resnet50_finetuned_confusion_matrix.png)
 
 The most common error across **every** model tested was confusing
 **Calculus** and **Gingivitis** — this is consistent with real visual overlap
@@ -163,26 +163,25 @@ of concerns:
 
 ## Project Structure
 
+```
 oral-disease-classification/
-├── project_notebook.ipynb # full training pipeline
-├── assets/ # result visuals used in this README
+├── project_notebook.ipynb       # full training pipeline
+├── assets/                      # result visuals used in this README
 ├── deployment/
-│ ├── app/
-│ │ ├── main.py
-│ │ ├── config.py
-│ │ ├── model_service.py
-│ │ ├── preprocessing.py
-│ │ ├── schemas.py
-│ │ ├── exceptions.py
-│ │ └── static/ # frontend (HTML/CSS/JS)
-│ ├── models/ # exported model + class names
-│ ├── tests/
-│ ├── Dockerfile
-│ └── requirements.txt
+│   ├── app/
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── model_service.py
+│   │   ├── preprocessing.py
+│   │   ├── schemas.py
+│   │   ├── exceptions.py
+│   │   └── static/               # frontend (HTML/CSS/JS)
+│   ├── models/                   # exported model + class names
+│   ├── tests/
+│   ├── Dockerfile
+│   └── requirements.txt
 └── README.md
-
-
----
+```
 
 ## Running Locally
 
